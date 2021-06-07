@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wwf.dao.MusicMapper">
+    <select id="queryAllMusic" resultType="music">
+        select * from music.song
+    </select>
+
+    <select id="queryById" resultType="music">
+        select * from music.song where id=#{id}
+    </select>
+
+    <select id="queryCount" resultType="int">
+        select count(*) from music.song
+    </select>
+
+    <select id="queryMusic" resultType="music">
+        select * from music.song where title like concat('%',#{name},'%') or  name like concat('%',#{name},'%')
+    </select>
+
+    <insert id="insertMusic" parameterType="music">
+        insert into music.song(src, title, name) values (#{src},#{title},#{name})
+    </insert>
+</mapper>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wwf.dao.UserMapper">
+
+    <insert id="addUser" parameterType="user">
+        insert into music.user(username, password,email) values (#{username},#{password},#{email})
+    </insert>
+
+    <select id="selectUser" parameterType="String" resultType="user">
+        select * from music.user where username=#{name}
+    </select>
+    
+    <update id="updateMusicId" parameterType="String">
+        update music.user set musicId=#{musicId} where username=#{name}
+    </update>
+    
+    <select id="selectMusicId" parameterType="String" resultType="user">
+        SELECT * FROM USER WHERE username=#{username};
+    </select>
+
+    <update id="updateInformation" parameterType="String">
+        update music.user set email=#{email},sex=#{sex},birthday=#{birthday} where username=#{name};
+    </update>
+
+    <update id="updateUserName" parameterType="String">
+        update music.user set username=#{newName} where username=#{name};
+    </update>
+
+    <update id="updateUserPwd" parameterType="String">
+        update music.user set password=#{Pwd} where username=#{name};
+    </update>
+
+    <update id="updateJur" parameterType="String">
+        update music.user set jurisdiction=#{jur} where username=#{name}
+    </update>
+
+    <delete id="deleteUser" parameterType="String">
+        delete from music.user where username=#{name}
+    </delete>
+
+    <select id="selectAllUser" resultType="user">
+        select * from user
+    </select>
+</mapper>

@@ -1,0 +1,107 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	content: '';
+	background: url(../img/12.jpg) no-repeat;
+	background-size: 100% 100%;
+	filter: blur(20px);
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+
+textarea {
+	resize: none;
+	outline: none;
+}
+
+/* 居中显示 */
+#wrapper {
+	border: 1px dotted #CCCCCC;
+	margin: 50px auto;
+	padding: 20px;
+}
+
+/* 留言显示区域 */
+.comment {
+	position: relative;
+	overflow: hidden;
+}
+
+.message {
+	height: 20rem;
+	overflow: auto;
+}
+
+.message li {
+	border-bottom: 1px solid #CCCCCC;
+	padding: 1rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+/* 留言输入框 */
+.concent {
+	width: 65rem;
+	line-height: 1.5;
+	font-size: 1.2rem;
+}
+
+/* 留言发布区域 */
+.sendMessageWrap {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+/* 发布 */
+.sendMessageWrap input,
+.sendMessageWrap textarea {
+	display: block;
+	width: 15rem;
+	height: 5rem;
+	font-size: 1rem;
+	border: 1px solid #CCCCCC;
+	border-radius: 5px;
+	padding: 10px;
+	box-sizing: border-box;
+	margin: 10px 0;
+}
+
+/* 发布留言按钮 */
+.sendMessageWrap button{
+	border: 0;
+	background-color: bisque;
+	padding: 6px 8px;
+	border-radius: 5px;
+	color: black;
+	font-size: 1rem;
+}
+.sendMessageWrap a{
+	border: 0;
+	background-color: bisque;
+	padding: 6px 8px;
+	border-radius: 5px;
+	color: black;
+	font-size: 1rem;
+}
+
+.but {
+	float: right;
+	border-radius: 5px;
+	background-color: bisque;
+	border: 1px solid white;
+	font-size: 15px;
+	font-weight: lighter;
+}

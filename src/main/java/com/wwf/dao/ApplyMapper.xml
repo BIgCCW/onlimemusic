@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wwf.dao.ApplyMapper">
+    <insert id="addApply" parameterType="apply">
+        insert into music.apply(username, password, jurisdiction, reason, operation) values (#{username},#{password},#{jurisdiction},#{reason},#{operation})
+    </insert>
+
+    <select id="selectUser" parameterType="String" resultType="apply">
+        select * from apply where username=#{name} and operation=#{operation}
+    </select>
+
+    <select id="selectAll" resultType="apply">
+        select * from apply
+    </select>
+
+    <delete id="deleteApply" parameterType="String">
+        delete from apply where username=#{name} and operation=#{operation}
+    </delete>
+
+    <delete id="deleteAll" parameterType="String">
+        delete from apply where username=#{name}
+    </delete>
+</mapper>
